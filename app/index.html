@@ -44,16 +44,24 @@
 					<option value="LRU">Least Recently Used</option>
                     <option value="Optimal">Optimal</option>
 				</select>
+              
+               <button class="btn" style="float:right" id="start">Start</button>
 			</section>
+           
 			
 			
 			
 		</div><!-- /container -->
         
         <div class="pagePane"></div>
-        <div class="mainView">
         
+        <div class="mainView">
+            <div class="pageStackWrapper">
+                <div class="pageStack"></div>
+            </div>
+            <div class="messages"></div>
         </div>
+        <script src="js/jquery-2.1.4.js"></script>
 		<script src="js/classie.js"></script>
         
         <script src="js/selectFx.js"></script>
@@ -89,5 +97,10 @@
 				}
 			})();
 		</script>
+        
+        
+        <script src="js/pageArray.js"></script>
+        <script src="js/stack.js"></script>
+        <script src="js/main.js"></script>
 	</body>
 </html>
