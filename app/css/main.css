@@ -1,0 +1,17 @@
+.pagePane {
+    
+    height: 50px;
+    border: 2px black solid;
+    margin: 1em;
+    
+}
+
+.large {
+    
+}
+
+.small {
+    height: 50px;
+    width: 50px;
+    
+}

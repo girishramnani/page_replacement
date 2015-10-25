@@ -36,7 +36,6 @@ a:hover, a:focus {
 .container {
 	margin: 0 auto;
 	text-align: center;
-	overflow: hidden;
 }
 
 .content h2 {
@@ -68,79 +67,3 @@ body .nomargin-bottom {
 
 
 
-/* Top Navigation Style */
-.codrops-icon {
-	display: inline-block;
-	margin: 0.5em;
-	padding: 0em 0;
-	width: 1.5em;
-	text-decoration: none;
-}
-
-.codrops-icon span {
-	display: none;
-}
-
-.codrops-icon:before {
-	margin: 0 5px;
-	text-transform: none;
-	font-weight: normal;
-	font-style: normal;
-	font-variant: normal;
-	font-family: 'codropsicons';
-	line-height: 1;
-	speak: none;
-	-webkit-font-smoothing: antialiased;
-}
-
-.codrops-icon--drop:before {
-	content: "\e001";
-}
-
-.codrops-icon--prev:before {
-	content: "\e004";
-}
-
-/* Related demos */
-.content--related {
-	text-align: center;
-	color: #D8DADB;
-	font-weight: bold;
-}
-
-.media-item {
-	display: inline-block;
-	padding: 1em;
-	vertical-align: top;
-	-webkit-transition: color 0.3s;
-	transition: color 0.3s;
-}
-
-.media-item__img {
-	opacity: 0.8;
-	-webkit-transition: opacity 0.3s;
-	transition: opacity 0.3s;
-}
-
-.media-item:hover .media-item__img,
-.media-item:focus .media-item__img {
-	opacity: 1;
-}
-
-.media-item__title {
-	font-size: 0.75em;
-	margin: 0;
-	padding: 0.5em;
-}
-
-@media screen and (max-width: 50em) {
-	.codrops-header {
-		padding: 3em 10% 4em;
-	}
-}
-
-@media screen and (max-width: 40em) {
-	.codrops-header h1 {
-		font-size: 2.8em;
-	}
-}
