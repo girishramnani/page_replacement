@@ -7,7 +7,7 @@ function Stack(){
 
 Stack.prototype.initialize = function(size){
     
-    $(".pageStackBorder").css("height",56*size+"px");
+    $(".pageStackBorder").css("height",57*size+"px");
     $(".pageStackBorder").css("border","2px solid black");
          
 }
@@ -15,7 +15,7 @@ Stack.prototype.initialize = function(size){
 Stack.prototype.append = function(number){
     this.set.add(number);
     this.el.append(createBlock(number,["large","page"]))
-    this.array.append(number);
+    this.array.push(number);
     
     
 }

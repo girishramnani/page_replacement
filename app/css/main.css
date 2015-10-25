@@ -11,8 +11,6 @@
     height:50px;
     width: 50px;
     margin: 3px;
-    margin-bottom: 0px !important;
-
     
     
 }
@@ -28,7 +26,7 @@
     background-color: cornflowerblue;
     position: relative;
     text-align: center;  
-    transition: transform .5s;
+    transition: transform 0.5s;
 }
 
 .invisible{
@@ -92,6 +90,7 @@
 .pageStack{
  
     width: 60px;
+    margin: 0 auto;
 /*
     bottom: 0px;
     left: 50%;

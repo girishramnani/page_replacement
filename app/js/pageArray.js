@@ -27,15 +27,23 @@ function createBlock(number,prop){
 PageArray.prototype.append = function(number){
     this.array.push(number);
     var b = createBlock(number,["small","page"]);
+    b.css("opacity",0);
+    b.css("top","-5px");
     this.div.append(b);
     
+    b.animate({"top":"0px","opacity":1});
+    b.fadeIn(1000);
     
 }
 
 PageArray.prototype.extend = function(pages){
     self = this;
-    pages.forEach(function(page){ 
+    pages.forEach(function(page,index){
+        
+        setTimeout(function(){
         self.append(page);
+            
+        },index*100);
     });
     
 }
