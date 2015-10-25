@@ -8,12 +8,15 @@ function PageArray(){
     this.past_active = -1;      
 }
 
-function createBlock(number){
+function createBlock(number,prop){
     
     
     var block = $("<div/>");
-    block.addClass("page");
-    block.addClass("small");
+    prop.forEach( function( cl ){
+        
+            block.addClass(cl);
+
+    });
     block.html("<p>"+number+"</p>");
     return block;
  
@@ -23,7 +26,7 @@ function createBlock(number){
 
 PageArray.prototype.append = function(number){
     this.array.push(number);
-    var b = createBlock(number);
+    var b = createBlock(number,["small","page"]);
     this.div.append(b);
     
     

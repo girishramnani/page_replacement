@@ -8,6 +8,12 @@
 
 .large {
     
+    height:50px;
+    width: 50px;
+    margin: 3px;
+    margin-bottom: 0px !important;
+
+    
     
 }
 
@@ -21,9 +27,18 @@
     display: inline-block;
     background-color: cornflowerblue;
     position: relative;
-    text-align: center;
+    text-align: center;  
+    transition: transform .5s;
+}
+
+.invisible{
     
-    
+    transform: scale(0);
+}
+
+.visible{
+ 
+    transform: scale(1);
     
 }
 
@@ -32,9 +47,20 @@
     font-size: 1.5em;
     display: inline-block;
     position: relative;
-    margin: 5px;
+    bottom: 15px;
 }
 
+
+.pageStackBorder{
+  width: 63px;
+  bottom: 0px;
+    left: 50%;
+    position: absolute;
+    
+  
+    
+    
+}
 .small {
     margin: 3px;
     height: 40px;
@@ -54,14 +80,24 @@
     width: 70%;
     margin: 1em;
     display: inline-block;
+    position: relative;
+}
+
+.pageStack.visible{
+    
+    border: 2px solid black;
+    
 }
 
 .pageStack{
  
     width: 60px;
-    margin: 1em auto;
-    height: 100%;
+/*
+    bottom: 0px;
+    left: 50%;
     
+    position: absolute;
+*/
     
 }
 
