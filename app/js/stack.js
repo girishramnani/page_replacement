@@ -31,8 +31,15 @@ Stack.prototype.has = function(number){
 }
 
 Stack.prototype.replace = function(index,number){
+    this.set.delete(this.array[index]);
+    this.array = this.array.slice(0,index).concat(this.array.slice(index+1))
+    var selected = this.el.find(".page");
+    selected[index].remove();    
     
+    this.append(number);
 }
+
+
 
 
 

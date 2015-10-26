@@ -6,5 +6,6 @@ $("#start").click(function(event){
     var a_frames = frames.val().split(",");
     mainArray.extend(a_frames);
     
+    
 });
 
