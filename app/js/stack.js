@@ -36,6 +36,11 @@ Stack.prototype.append = function(number){
     
 }
 
+Stack.prototype.indexOf = function(number){
+ 
+    return this.array.indexOf(number);
+}
+
 Stack.prototype.has = function(number){
  
     return this.set.has(number);

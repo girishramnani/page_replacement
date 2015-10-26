@@ -18,17 +18,9 @@ $("#init").click(function(evt){
     mainArray.extend(a_frames);
     var n_frames = Number($("#input-27").val());
     stack.initialize(n_frames);
-
-    
-});
-$("#start").click(function(event){
-   
-    
-    
-    
+    setTimeout(function(){
+     var algorithm = $("#algorithm").val();
         
-        var algorithm = $("#algorithm").val();
-        var algo_impl = null;
         switch(algorithm){
                 
             case "FIFO":
@@ -50,6 +42,18 @@ $("#start").click(function(event){
                         
                 
         }
+    },(n_frames*100)+1000);
+    
+});
+
+var algo_impl = null;
+$("#start").click(function(event){
+   
+    
+    
+    
+        
+       
 //        for(var i=0;i<mainArray.length();i++){
         var info=null;
         
@@ -78,6 +82,7 @@ $("#start").click(function(event){
                                     else{
                                             var page_index = algo_impl.getRPage();
                                             loge.log("using the algorithm to replace page");
+                                        
                                             stack.replace(page_index,info.val);
                                             console.log(mainArray.length(),tk.time);
 
