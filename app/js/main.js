@@ -40,9 +40,21 @@ $("#start").click(function(event){
         }
         console.log("sdf");
         
-        for(var i=0;i<mainArray.length();i++){
-         
-        }
+//        for(var i=0;i<mainArray.length();i++){
+         var info = mainArray.next();
+         if(stack.has(info.val)){
+             mainArray.nofault();
+             
+         }
+        else{
+            mainArray.fault()   
+            }
+        
+        info = mainArray.next(0;
+        
+        
+            
+//        }
         
         
         

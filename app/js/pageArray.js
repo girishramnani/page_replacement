@@ -71,3 +71,18 @@ PageArray.prototype.next = function(){
     return {val:number,index:indx}
     
 }
+
+PageArray.prototype._addC(cls){
+    $(this.div.children()[this.past_active]).removeClass("active");   
+    this.div.children()[this.past_active].addClass(cls);
+    
+}
+PageArray.prototype.fault(){
+    this._addC("fault");
+}
+
+PageArray.prototype.nofault(){
+    this._addC("nofault");
+}
+
+
