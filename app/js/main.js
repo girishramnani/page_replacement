@@ -13,21 +13,20 @@ var _s ={
 
 
 $("#init").click(function(evt){
-    
-    
-});
-$("#start").click(function(event){
     var frames = $("#input-25");
     var a_frames = frames.val().split(",");
     mainArray.extend(a_frames);
-    
     var n_frames = Number($("#input-27").val());
+    stack.initialize(n_frames);
+
+    
+});
+$("#start").click(function(event){
+   
     
     
-    setTimeout(function(){
     
         
-        stack.initialize(n_frames);
         var algorithm = $("#algorithm").val();
         var algo_impl = null;
         switch(algorithm){
@@ -59,39 +58,71 @@ $("#start").click(function(event){
         function loop_function() {
             
             if (loop < x){
-//            setTimeout(
+            setTimeout(
+                function(){
 //                
-//                function(){
-                info = mainArray.next();
+                setTimeout(
+                    function(){
+                    info = mainArray.next();
+                        setTimeout(function(){
+
+                             if(stack.has(info.val)){
+                                    mainArray.nofault();             
+                                }
+                                else{ // fault section
+                                    mainArray.fault();
+                                    faults+=1;
+                                    if(stack.append(info.val)){
+                                            loge.log("added the page "+info.val,"info");
+                                    }
+                                    else{
+                                            var page_index = algo_impl.getRPage();
+                                            loge.log("using the algorithm to replace page");
+                                            stack.replace(page_index,info.val);
+                                            console.log(mainArray.length(),tk.time);
+
+                                        }
+                                     
+
+                                    }
+                             loop+=1;
+                            loop_function();
+
+                                },_s.DELAY);
+                        },_s.DELAY);
 //                },tk.T(1.5*_s.DELAY));
 
 
 //             setTimeout(function(){
-             if(stack.has(info.val)){
-                 mainArray.nofault();             
-             }
-            else{ // fault section
-                mainArray.fault();
-                faults+=1;
-                if(stack.append(info.val)){
-                        loge.log("added the page "+info.val,"info");
-                }
-                else{
-                        var page_index =0;
-                        loge.log("using the algorithm to replace page");
-                        stack.replace(page_index,info.val);
-                        console.log(mainArray.length(),tk.time);
-                    
-                    }
-                    
-                }
+//             if(stack.has(info.val)){
+//                 mainArray.nofault();             
+//             }
+//            else{ // fault section
+//                mainArray.fault();
+//                faults+=1;
+//                if(stack.append(info.val)){
+//                        loge.log("added the page "+info.val,"info");
+//                }
+//                else{
+//                        var page_index =0;
+//                        loge.log("using the algorithm to replace page");
+//                        stack.replace(page_index,info.val);
+//                        console.log(mainArray.length(),tk.time);
+//                    
+//                    }
+//                    
+//                }
 //             },tk.T(_s.DELAY));
 //            setTimeout(function(){
                 
-                loop+=1;
-                loop_function();
-//            },tk.T(100));
+              
+            },500);
                 
+            }
+            
+            else{
+                
+             alert("the number of page Faults are "+faults);   
             }
         }
         loop_function();
@@ -101,7 +132,7 @@ $("#start").click(function(event){
         
             
 //        }
-    },tk.T(100*n_frames));
+//    },tk.T(100*n_frames));
     
 });
 
