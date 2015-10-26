@@ -50,7 +50,7 @@ $("#start").click(function(event){
             mainArray.fault()   
             }
         
-        info = mainArray.next(0;
+        info = mainArray.next();
         
         
             

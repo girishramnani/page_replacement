@@ -72,7 +72,7 @@ PageArray.prototype.next = function(){
     
 }
 
-PageArray.prototype._addC(cls){
+PageArray.prototype._addC  = function(cls){
     $(this.div.children()[this.past_active]).removeClass("active");   
     this.div.children()[this.past_active].addClass(cls);
     
