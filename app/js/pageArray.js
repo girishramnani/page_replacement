@@ -77,11 +77,11 @@ PageArray.prototype._addC  = function(cls){
     this.div.children()[this.past_active].addClass(cls);
     
 }
-PageArray.prototype.fault(){
+PageArray.prototype.fault = function(){
     this._addC("fault");
 }
 
-PageArray.prototype.nofault(){
+PageArray.prototype.nofault = function(){
     this._addC("nofault");
 }
 
