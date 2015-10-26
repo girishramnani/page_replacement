@@ -17,9 +17,20 @@
 
 .page.active.small {
  
+    background-color: black;
+    
+}
+
+.page.fault.small {
+ 
     background-color: crimson;
     
 }
+
+.page.nofault.small {
+    background-color: limegreen;
+}
+
 .page
 {
     display: inline-block;

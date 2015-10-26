@@ -39,12 +39,12 @@
 						<span class="input__label-content input__label-content--ichiro"> Frame size</span>
 					</label>
 				</span>
-                <select class="cs-select cs-skin-border">
+                <select class="cs-select cs-skin-border" id="algorithm">
 					<option value="" disabled selected>Page replacement Algorithm</option>
 					<option value="FIFO">First in First out</option>
 					<option value="SEC">Second Chance</option>
 					<option value="LRU">Least Recently Used</option>
-                    <option value="Optimal">Optimal</option>
+                    <option value="OPT">Optimal</option>
 				</select>
               
                <button class="btn" style="float:right" id="start">Start</button>
@@ -66,10 +66,13 @@
             </div>
             <div class="messages"></div>
         </div>
+        
+        
         <script src="js/jquery-2.1.4.js"></script>
 		<script src="js/classie.js"></script>
-        
         <script src="js/selectFx.js"></script>
+        <script src="js/loggingEngine.js"></script>
+        
 		<script>
 			(function() {
 				[].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {	
@@ -106,6 +109,10 @@
         
         <script src="js/pageArray.js"></script>
         <script src="js/stack.js"></script>
+        <script src="js/Fifo.js"></script>
+        <script src="js/optimal.js"></script>
+        <script src="js/second.js"></script>
+        <script src="js/LRU.js"></script>
         <script src="js/main.js"></script>
 	</body>
 </html>
