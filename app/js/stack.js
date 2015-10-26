@@ -14,14 +14,26 @@ Stack.prototype.initialize = function(size){
 
 Stack.prototype.append = function(number){
     this.set.add(number);
-    this.el.append(createBlock(number,["large","page"]))
+    
+    var block = createBlock(number,["large","page"]);
+    block.css("opacity","0");
+    block.css("left","-20px");
+    this.el.append(block);
+    block.animate({"opacity":1,"left":"0px"});
     this.array.push(number);
     
     
 }
 
+Stack.prototype.has = function(number){
+ 
+    return this.set.has(number);
+}
+
 Stack.prototype.replace = function(index,number){
     
 }
+
+
 
 
