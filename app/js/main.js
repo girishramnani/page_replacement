@@ -4,6 +4,14 @@ var stack = new Stack();
 var loge = new LogEngine("nothing"); //!global
 var tk = new timeKeeper();
 
+// program settings
+
+var _s ={    
+    DELAY:500;
+};
+
+
+
 $("#start").click(function(event){
     var frames = $("#input-25");
     var a_frames = frames.val().split(",");
@@ -39,34 +47,31 @@ $("#start").click(function(event){
                 
         }
 //        for(var i=0;i<mainArray.length();i++){
-        
+        var info=null;
         setTimeout(function(){
         
-            
-            var info = mainArray.next();
-            
-            
-        },tk.T(1000));
+            info = mainArray.next();
+              
+        },tk.T(_s.DELAY));
+        
         
          setTimeout(function(){
              
-             
          if(stack.has(info.val)){
-             mainArray.nofault();
-            
-             
+             mainArray.nofault();             
          }
-             
         else{
             mainArray.fault()   
             }
-            
-             
-        },tk.T(1000));
+
+        },tk.T(_s.DELAY));
         
         
-        info = mainArray.next();
-    
+        setTimeout(function(){
+        
+            info = mainArray.next();
+        
+        },tk.T(_s.DELAY))
         
         
         
