@@ -3,25 +3,36 @@ function Stack(){
     this.set =new Set();
     this.array=[];
     
+    
 }
 
 Stack.prototype.initialize = function(size){
-    
+    loge.log("Intializing PageTable of size "+size);
+    this.size = size;
     $(".pageStackBorder").css("height",57*size+"px");
     $(".pageStackBorder").css("border","2px solid black");
          
 }
 
 Stack.prototype.append = function(number){
+    
+    if(this.size <=this.array.length){
+        return false;
+    }
     this.set.add(number);
     
     var block = createBlock(number,["large","page"]);
     block.css("opacity","0");
     block.css("left","-20px");
-    this.el.append(block);
-    block.animate({"opacity":1,"left":"0px"});
-    this.array.push(number);
+    self = this;
     
+        
+    self.el.append(block);
+    block.animate({"opacity":1,"left":"0px"});
+    
+    this.array.push(number);
+        
+    return true;
     
 }
 

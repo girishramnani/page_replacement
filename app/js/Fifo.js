@@ -6,3 +6,9 @@ function Fifo(page_array,page_stack){
 
     
 }
+
+Fifo.prototype.getRPage = function(){
+    
+    return 0;
+    
+}
