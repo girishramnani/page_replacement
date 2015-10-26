@@ -1,7 +1,4 @@
 
-
-
-
 function PageArray(){
     this.array = [];
     this.div = $(".pagePane");
@@ -26,6 +23,7 @@ function createBlock(number,prop){
 }
 
 PageArray.prototype.append = function(number){
+    loge.log("Adding "+number+" to the pageArray","info");
     this.array.push(number);
     var b = createBlock(number,["small","page"]);
     b.css("opacity",0);
@@ -50,11 +48,10 @@ PageArray.prototype.extend = function(pages){
 }
 
 PageArray.prototype.select = function(number){
-    
+    loge.log("selecting "+this.array[number]+" at index "+number,"info");
     if(this.past_active>=0){
         $(this.div.children()[this.past_active]).removeClass("active");   
     }
-    
    $(this.div.children()[number]).addClass("active");
     this.past_active = number;
 }
@@ -74,14 +71,16 @@ PageArray.prototype.next = function(){
 
 PageArray.prototype._addC  = function(cls){
     $(this.div.children()[this.past_active]).removeClass("active");   
-    this.div.children()[this.past_active].addClass(cls);
+    $(this.div.children()[this.past_active]).addClass(cls);
     
 }
 PageArray.prototype.fault = function(){
+    loge.log("the page request "+this.past_active+" generated a fault","warning");
     this._addC("fault");
 }
 
 PageArray.prototype.nofault = function(){
+    loge.log("the page request "+this.past_active+" was found","success");
     this._addC("nofault");
 }
 

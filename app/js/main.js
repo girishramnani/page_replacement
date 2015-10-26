@@ -38,7 +38,6 @@ $("#start").click(function(event){
                         
                 
         }
-        console.log("sdf");
         
 //        for(var i=0;i<mainArray.length();i++){
          var info = mainArray.next();
