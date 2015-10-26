@@ -2,7 +2,7 @@
 var mainArray = new PageArray();
 var stack = new Stack();
 var loge = new LogEngine("nothing"); //!global
-
+var tk = new timeKeeper();
 
 $("#start").click(function(event){
     var frames = $("#input-25");
@@ -38,18 +38,37 @@ $("#start").click(function(event){
                         
                 
         }
-        
 //        for(var i=0;i<mainArray.length();i++){
-         var info = mainArray.next();
+        
+        setTimeout(function(){
+        
+            
+            var info = mainArray.next();
+            
+            
+        },tk.T(1000));
+        
+         setTimeout(function(){
+             
+             
          if(stack.has(info.val)){
              mainArray.nofault();
+            
              
          }
+             
         else{
             mainArray.fault()   
             }
+            
+             
+        },tk.T(1000));
+        
         
         info = mainArray.next();
+    
+        
+        
         
         
             
@@ -59,7 +78,7 @@ $("#start").click(function(event){
         
         
         
-    },100*n_frames);
+    },tk.T(100*n_frames));
     
 });
 
